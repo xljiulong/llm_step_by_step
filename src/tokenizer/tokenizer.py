@@ -7,7 +7,7 @@ import os
 import torch
 cur_path = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(cur_path, '../../'))
-from src.dataset.tokenizer_data_iter import create_shard_kwargs, create_data_iter
+from dataset.data_iter import create_shard_kwargs, create_data_iter
 
 class Tokenizer:
     def __init__(self, sp_model):
