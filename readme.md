@@ -20,3 +20,7 @@ export https_proxy=http://192.168.200.26:51837
 ## 取消代理
 unset https_proxy  
 unset http_proxy  
+
+
+# 补充
+## git
