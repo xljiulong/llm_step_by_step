@@ -11,6 +11,9 @@ docker run -dit --name=llm_step_by_step --shm-size 24g  --gpus all --runtime=nvi
 2. 进入容器
 docker exec -it llm_step_by_step /bin/bash
 
+# tokenizer
+1. 数据处理 
+
 
 # 代理
 ## 代理设置
@@ -20,7 +23,3 @@ export https_proxy=http://192.168.200.26:51837
 ## 取消代理
 unset https_proxy  
 unset http_proxy  
-
-
-# 补充
-## git
