@@ -45,7 +45,7 @@ spm.SentencePieceTrainer.train(
   allow_whitespace_only_pieces=True, remove_extra_whitespaces=False, normalization_rule_name='nfkc')
 
 # Serialize the model as file.
-with open('/workspace/projects/llm/src/llama/configs/2w_vocab_wudao5_pile10.model', 'wb') as f:
+with open('/workspace/projects/llm_step_by_step/model/tokenizer/2w_vocab_wudao5_pile10.model', 'wb') as f:
   f.write(model.getvalue())
 
 # Directly load the model from serialized model.
