@@ -1,7 +1,3 @@
-'''
-Author: zhangjiulong
-Email: xljiulong@gmail.com
-'''
 import os
 import sys
 import random
@@ -15,6 +11,8 @@ from src.dataset.tokenizer_data_iter import create_shard_kwargs, create_data_ite
 wudao_patterns = [
     '/workspace/projects/Open-Llama/data/pretrain_data/part-wudao-*.jsonl.zst',
 ]
+
+tokenizer_model = '/workspace/projects/llm_step_by_step/model/tokenizer/2w_vocab_wudao5_pile10.model'
 wudao_paths = create_shard_kwargs(wudao_patterns)
 random.shuffle(wudao_paths)
 
@@ -45,7 +43,7 @@ spm.SentencePieceTrainer.train(
   allow_whitespace_only_pieces=True, remove_extra_whitespaces=False, normalization_rule_name='nfkc')
 
 # Serialize the model as file.
-with open('/workspace/projects/llm_step_by_step/model/tokenizer/2w_vocab_wudao5_pile10.model', 'wb') as f:
+with open(tokenizer_model, 'wb') as f:
   f.write(model.getvalue())
 
 # Directly load the model from serialized model.
