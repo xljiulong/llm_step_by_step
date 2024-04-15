@@ -1,6 +1,6 @@
 '''
 Author: zhangjiulong
-email: xljiulong@gmail.com
+Email: xljiulong@gmail.com
 '''
 import os
 import json
