@@ -22,3 +22,5 @@ docker exec -it llm_step_by_step /bin/bash
 python preprocess_wudao.py 
 ```
 
+# 参考资料
+> https://github.com/meta-llama/llama/
