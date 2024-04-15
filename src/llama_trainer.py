@@ -19,9 +19,7 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
 from torch.utils.tensorboard import SummaryWriter
-from dataset.data_iter import create_shard_kwargs, create_data_iter
-from dataset.pretrain_dataset import preprocess_the_pile_gen, \
-    preprocess_wudao_gen, pretrain_collate_fn_gen
+
 from datasets import IterableDataset
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
@@ -32,6 +30,9 @@ from src.utils.logging import log_dist
 from src.utils.dist_utils import is_rank_0
 from src.tokenizer.my_tokenizer import tokenizer
 from src.model.modeling_llama import LlamaConfig, LlamaForCausalLM
+from src.dataset.data_iter import create_shard_kwargs, create_data_iter
+from src.dataset.pretrain_dataset import preprocess_the_pile_gen, \
+    preprocess_wudao_gen, pretrain_collate_fn_gen
 
 def init_env(training_args:TrainingArguments):
     ################################
