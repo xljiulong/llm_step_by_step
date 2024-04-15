@@ -1,0 +1,99 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "DebugTokenTrainer",
+            "type": "python",
+            "request": "launch",
+            "program": "/workspace/projects/llm/src/llama/dataset/train_tokenizer.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "DebugWudaoPreprocess",
+            "type": "python",
+            "request": "launch",
+            "program": "/workspace/projects/Open-Llama/data/preprocess_wudao.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "DebugBert",
+            "type": "python",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "/opt/conda/bin/deepspeed",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                // "--include",
+                // "localhost:0",
+                "/workspace/projects/llm/src/ds_bert/train_bert_ds.py",
+                "--checkpoint_dir",
+                "/workspace/projects/llm/data/check_points/experiment_deepspeed_bert",
+
+            ]
+        },
+        {
+            "name": "DebugLlama",
+            "type": "python",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "/opt/conda/bin/deepspeed",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--include",
+                "localhost:0",
+                "/workspace/projects/llm/src/llama/trainer.py",
+                "--checkpoint_dir",
+                "/workspace/projects/llm/data/check_points/debug_deepspeed_llama",
+                "--train_datas_path_pattern",
+                "/workspace/projects/Open-Llama/data/pretrain_data/part-*.jsonl.zst",
+            ]
+        },
+        {
+            "name": "DebugFrame",
+            "type": "python",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "/opt/conda/bin/deepspeed",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--include",
+                "localhost:0",
+                "/workspace/projects/llm/src/llama/trainer_frame.py",
+                "--checkpoint_dir",
+                "/workspace/projects/llm/data/check_points/debug_deepspeed_llama",
+                "--train_datas_path_pattern",
+                "/workspace/projects/Open-Llama/data/pretrain_data/part-*.jsonl.zst",
+                "--check_point_steps",
+                "100"
+            ]
+        },
+        {
+            "name": "DebugLocalLlama",
+            "type": "python",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "/opt/conda/bin/deepspeed",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--include",
+                "localhost:1",
+                "/workspace/projects/llm/src/llama/trainer_modeling_llama.py",
+                "--checkpoint_dir",
+                "/workspace/projects/llm/data/check_points/debug_deepspeed_llama",
+                "--train_datas_path_pattern",
+                "/workspace/projects/Open-Llama/data/pretrain_data/part-*.jsonl.zst",
+                "--check_point_steps",
+                "100"
+            ]
+        }
+    ]
+}
