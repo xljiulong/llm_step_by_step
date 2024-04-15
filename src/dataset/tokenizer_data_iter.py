@@ -1,13 +1,9 @@
-'''
-Author: LiangSong(sl12160010@gmail.com)
-Date: 2023-03-17 19:32:20
-LastEditors: LiangSong(sl12160010@gmail.com)
-LastEditTime: 2023-03-26 23:03:32
-FilePath: /Open-Llama/dataset/data_iter.py
-Description: 
 
-Copyright (c) 2023 by LiangSong(sl12160010@gmail.com), All Rights Reserved. 
 '''
+Author: zhangjiulong
+email: xljiulong@gmail.com
+'''
+
 import json
 from glob import glob
 import zstandard as zstd

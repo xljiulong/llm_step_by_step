@@ -1,13 +1,6 @@
 '''
-Author: LiangSong(sl12160010@gmail.com)
-Date: 2023-03-16 22:10:44
-LastEditors: LiangSong(sl12160010@gmail.com)
-LastEditTime: 2023-03-26 22:59:55
-FilePath: /Open-Llama/data/preprocess_wudao.py
-Description: 
-Parse the dataset from the raw files and split them into different jsonl files based on the preset maximum number of lines, 
-making it easy for parallel training to perform streaming reads.
-Copyright (c) 2023 by LiangSong(sl12160010@gmail.com), All Rights Reserved. 
+Author: zhangjiulong
+email: xljiulong@gmail.com
 '''
 import os
 import json
