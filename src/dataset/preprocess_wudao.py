@@ -17,7 +17,7 @@ import zstandard as zstd
 from pathlib import Path
 import argparse
 
-def process_wudao(wudao_path, wudao_dst_path):
+def process_wudao(wudao_path, wudao_dst_path, record_num_per_file):
     # wudao_path = Path(f'{wudao_path}/part*')
     wudao_p = Path(wudao_path)
     wudao_files = wudao_p.glob('part*') # glob('/workspace/projects/Open-Llama/data/WuDaoCorpus2.0_base_200G/part*')
@@ -33,12 +33,13 @@ def process_wudao(wudao_path, wudao_dst_path):
     total_num = 0
     file_num = 0
     wfp = zstd.open(write_path.format(file_num), 'wb', encoding='utf-8')
-    for tpath in tqdm(wudao_files, total=list(wudao_files)):
-        print(f'processing file {tpath}')
+    wudao_files_lst = list(wudao_files)
+    for tpath in tqdm(wudao_files_lst, total=len(wudao_files_lst)):
+        # print(f'processing file {tpath}')
         with open(tpath, 'r') as fp:
             data = json.load(fp)
         for line in data:
-            if total_num % 16384 == 0 and total_num > 0:
+            if total_num % record_num_per_file == 0 and total_num > 0:
                 file_num += 1
                 wfp.close()
                 wfp = zstd.open(write_path.format(file_num), 'wb', encoding='utf-8')
@@ -52,8 +53,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="ttsing")
     parser.add_argument("--wudao_path", type=str, default='/workspace/projects/Open-Llama/data/WuDaoCorpus2.0_base_200G/', help="指定wudao数据目录路径")
     parser.add_argument("--wudao_write_path", type=str, default='/workspace/projects/llm_step_by_step/data/pretrain_data/', help="wudao数据处理后的目录")
+    parser.add_argument("--record_num_per_file", type=int, default=16384, help="每个zst文件记录数量")
     
     args = parser.parse_args()
     wudao_path = args.wudao_path
     wudao_write_path = args.wudao_write_path
-    process_wudao(wudao_path, wudao_write_path)
+    record_num_per_file = args.record_num_per_file
+    process_wudao(wudao_path, wudao_write_path, record_num_per_file)
