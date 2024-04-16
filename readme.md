@@ -40,3 +40,5 @@ python merge_tokenizer_to_hfllama.py
 > https://github.com/yangjianxin1/  
 > https://github.com/ymcui/Chinese-LLaMA-Alpaca-2  
 > https://github.com/yangjianxin1/LLMPruner/tree/master 根据token重新生成模型  
+> https://zhuanlan.zhihu.com/p/672712751 moe
+> https://github.com/pjlab-sys4nlp/llama-moe/tree/main LLaMa MOE
