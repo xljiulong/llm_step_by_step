@@ -32,3 +32,5 @@ python train_tokenizer.py
 
 # 参考资料
 > https://github.com/meta-llama/llama/
+> https://github.com/yangjianxin1/
+> https://github.com/ymcui/Chinese-LLaMA-Alpaca-2
