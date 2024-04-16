@@ -30,6 +30,11 @@ python preprocess_wudao.py
 python train_tokenizer.py
 ```
 
+## 扩充tokenizer  
+```
+python merge_tokenizer_to_hfllama.py
+```
+
 # 参考资料
 > https://github.com/meta-llama/llama/  
 > https://github.com/yangjianxin1/  
