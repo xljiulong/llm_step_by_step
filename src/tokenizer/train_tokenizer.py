@@ -6,7 +6,7 @@ import sentencepiece as spm
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(cur_path, '../../'))
-from src.dataset.tokenizer_data_iter import create_shard_kwargs, create_data_iter
+from dataset.data_iter import create_shard_kwargs, create_data_iter
 
 wudao_patterns = [
     '/workspace/projects/Open-Llama/data/pretrain_data/part-wudao-*.jsonl.zst',

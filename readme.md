@@ -34,3 +34,4 @@ python train_tokenizer.py
 > https://github.com/meta-llama/llama/
 > https://github.com/yangjianxin1/
 > https://github.com/ymcui/Chinese-LLaMA-Alpaca-2
+> https://github.com/yangjianxin1/LLMPruner/tree/master 根据token重新生成模型
