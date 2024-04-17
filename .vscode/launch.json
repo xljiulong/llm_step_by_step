@@ -16,26 +16,10 @@
             "name": "DebugWudaoPreprocess",
             "type": "python",
             "request": "launch",
-            "program": "/workspace/projects/Open-Llama/data/preprocess_wudao.py",
+            // "program": "/workspace/projects/Open-Llama/data/preprocess_wudao.py",
+            "program": "/workspace/projects/llm_step_by_step/src/dataset/preprocess_wudao.py",
             "console": "integratedTerminal",
             "justMyCode": true
-        },
-        {
-            "name": "DebugBert",
-            "type": "python",
-            "request": "launch",
-            // "program": "${file}",
-            "program": "/opt/conda/bin/deepspeed",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
-                // "--include",
-                // "localhost:0",
-                "/workspace/projects/llm/src/ds_bert/train_bert_ds.py",
-                "--checkpoint_dir",
-                "/workspace/projects/llm/data/check_points/experiment_deepspeed_bert",
-
-            ]
         },
         {
             "name": "DebugLlama",
@@ -56,26 +40,6 @@
             ]
         },
         {
-            "name": "DebugFrame",
-            "type": "python",
-            "request": "launch",
-            // "program": "${file}",
-            "program": "/opt/conda/bin/deepspeed",
-            "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
-                "--include",
-                "localhost:0",
-                "/workspace/projects/llm/src/llama/trainer_frame.py",
-                "--checkpoint_dir",
-                "/workspace/projects/llm/data/check_points/debug_deepspeed_llama",
-                "--train_datas_path_pattern",
-                "/workspace/projects/Open-Llama/data/pretrain_data/part-*.jsonl.zst",
-                "--check_point_steps",
-                "100"
-            ]
-        },
-        {
             "name": "DebugLocalLlama",
             "type": "python",
             "request": "launch",
@@ -85,8 +49,8 @@
             "justMyCode": false,
             "args": [
                 "--include",
-                "localhost:1",
-                "/workspace/projects/llm/src/llama/trainer_modeling_llama.py",
+                "localhost:0",
+                "/workspace/projects/llm_step_by_step/src/pretrain/llama_trainer.py",
                 "--checkpoint_dir",
                 "/workspace/projects/llm/data/check_points/debug_deepspeed_llama",
                 "--train_datas_path_pattern",
