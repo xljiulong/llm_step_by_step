@@ -42,3 +42,5 @@ python merge_tokenizer_to_hfllama.py
 > https://github.com/yangjianxin1/LLMPruner/tree/master 根据token重新生成模型  
 > https://zhuanlan.zhihu.com/p/672712751 moe
 > https://github.com/pjlab-sys4nlp/llama-moe/tree/main LLaMa MOE
+> https://zhuanlan.zhihu.com/p/649756898 
+> https://www.bilibili.com/video/BV12h4y1N7C8/?spm_id_from=333.788.recommend_more_video.0&vd_source=64f63f34985a708ab738d22e9d0dd177 知乎 哔哩哔哩 博主
