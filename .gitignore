@@ -13,3 +13,4 @@ wandb
 hf_cache_dir
 data
 nohup.out
+check_points
