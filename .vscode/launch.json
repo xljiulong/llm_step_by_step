@@ -28,25 +28,7 @@
             // "program": "${file}",
             "program": "/opt/conda/bin/deepspeed",
             "console": "integratedTerminal",
-            "justMyCode": false,
-            "args": [
-                "--include",
-                "localhost:0",
-                "/workspace/projects/llm/src/llama/trainer.py",
-                "--checkpoint_dir",
-                "/workspace/projects/llm/data/check_points/debug_deepspeed_llama",
-                "--train_datas_path_pattern",
-                "/workspace/projects/Open-Llama/data/pretrain_data/part-*.jsonl.zst",
-            ]
-        },
-        {
-            "name": "DebugLocalLlama",
-            "type": "python",
-            "request": "launch",
-            // "program": "${file}",
-            "program": "/opt/conda/bin/deepspeed",
-            "console": "integratedTerminal",
-            "justMyCode": false,
+            "justMyCode": true,
             "args": [
                 "--include",
                 "localhost:0",

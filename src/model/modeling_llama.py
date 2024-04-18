@@ -670,7 +670,7 @@ class LlamaModel(LlamaPreTrainedModel):
             attention_mask = torch.ones(
                 (batch_size, seq_length_with_past), dtype=torch.bool, device=inputs_embeds.device
             )
-        attention_mask = self._prepare_decoder_attention_mask(
+        attention_mask = self._prepare_decoder_attention_mask( # TODO TO DEEPIN
             attention_mask, (batch_size, seq_length), inputs_embeds, past_key_values_length
         )
 
@@ -689,7 +689,7 @@ class LlamaModel(LlamaPreTrainedModel):
         next_decoder_cache = () if use_cache else None
 
         for idx, decoder_layer in enumerate(self.layers):
-            if output_hidden_states:
+            if output_hidden_states: 
                 all_hidden_states += (hidden_states,)
 
             past_key_value = past_key_values[idx] if past_key_values is not None else None
@@ -719,10 +719,10 @@ class LlamaModel(LlamaPreTrainedModel):
                     use_cache=use_cache,
                 )
 
-            hidden_states = layer_outputs[0]
+            hidden_states = layer_outputs[0] # TODO to deepin
 
             if use_cache:
-                next_decoder_cache += (layer_outputs[2 if output_attentions else 1],)
+                next_decoder_cache += (layer_outputs[2 if output_attentions else 1],) # TODO next_decoder_cache什么意思
 
             if output_attentions:
                 all_self_attns += (layer_outputs[1],)
