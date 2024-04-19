@@ -18,6 +18,12 @@ docker run -dit --name=llm_step_by_step --shm-size 24g  --gpus all --runtime=nvi
 docker exec -it llm_step_by_step /bin/bash
 ```
 
+# docker compose
+1. 一键式构建
+```
+docker-compose up -d --build
+```
+
 # tokenizer  
 ## 数据处理  
 ### 构建一个方便分布式训练的数据集
