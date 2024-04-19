@@ -22,6 +22,7 @@ docker exec -it llm_step_by_step /bin/bash
 1. 一键式构建
 ```
 docker-compose up -d --build
+docker compose up -d --build
 ```
 
 # tokenizer  
