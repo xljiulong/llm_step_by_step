@@ -11,6 +11,7 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple && \
     echo 'Asia/Shanghai' > /etc/timezone && \
     apt-get update && \
+    apt-get install apt-utils && \
     apt-get install -y git && \
     apt-get install -y openssh-server && \
     apt-get install -y pdsh && \
