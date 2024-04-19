@@ -4,9 +4,9 @@ services:
     build:
       context: ../
       dockerfile: docker/torch2.0.1_cuda11.7.dockerfile
-    image: llm-step-by-step-test-compose:0.0.1
+    image: llm-step-by-step:0.0.1
     runtime: nvidia
-    container_name: llm-step-by-step-test-compose
+    container_name: llm-step-by-step
     tty: true
     restart: always
     ulimits:
