@@ -1,6 +1,6 @@
 version: '3'
 services:
-  llm-step-by-step-test-compose:
+  llm-step-by-step:
     build:
       context: ../
       dockerfile: docker/torch2.0.1_cuda11.7.dockerfile
