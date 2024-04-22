@@ -29,7 +29,7 @@ from src.utils.arg_parsers import ModelArguments, DataArguments, TrainingArgumen
 from src.utils.logging import log_dist
 from src.utils.dist_utils import is_rank_0
 from src.tokenizer.my_tokenizer import tokenizer
-from model.modeling_llama2 import LlamaConfig, LlamaForCausalLM
+from model.llama2.modeling_llama2 import LlamaConfig, LlamaForCausalLM
 from src.dataset.data_iter import create_shard_kwargs, create_data_iter
 from src.dataset.pretrain_dataset import preprocess_the_pile_gen, \
     preprocess_wudao_gen, pretrain_collate_fn_gen
