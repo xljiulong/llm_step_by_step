@@ -15,8 +15,6 @@ device = 'cuda'
 epochs = 100
 # epochs = 1000
 
-# 这里我没有用什么大型的数据集，而是手动输入了两对中文→英语的句子
-# 还有每个字的索引也是我手动硬编码上去的，主要是为了降低代码阅读难度
 # S: Symbol that shows starting of decoding input
 # E: Symbol that shows ending of decoding output
 # P: Symbol that will fill in blank sequence if current batch data size is short than time steps
