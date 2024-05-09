@@ -31,7 +31,7 @@
             "justMyCode": true,
             "args": [
                 "--include",
-                "localhost:0",
+                "localhost:1",
                 "/workspace/projects/llm_step_by_step/src/pretrain/llama_trainer.py",
                 "--checkpoint_dir",
                 "/workspace/projects/llm/data/check_points/debug_deepspeed_llama",

@@ -253,6 +253,7 @@ class LlamaAttention(nn.Module):
         self.config = config
         self.hidden_size = config.hidden_size
         self.num_heads = config.num_attention_heads
+        self.num_heads = config.num_heads
         self.head_dim = self.hidden_size // self.num_heads
         self.num_key_value_heads = config.num_key_value_heads
         self.num_key_value_groups = self.num_heads // self.num_key_value_heads
